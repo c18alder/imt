@@ -1,0 +1,1 @@
+/usr/bin/cc -g   @CMakeFiles/contiki_git.dir/objects1.rsp  -o contiki_git 

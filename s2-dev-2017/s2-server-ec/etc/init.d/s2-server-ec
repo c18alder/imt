@@ -1,0 +1,116 @@
+#!/bin/sh
+# kFreeBSD do not accept scripts as interpreters, using #!/bin/sh and sourcing.
+if [ true != "$INIT_D_SCRIPT_SOURCED" ] ; then
+    set "$0" "$@"; INIT_D_SCRIPT_SOURCED=true . /lib/init/init-d-script
+fi
+### BEGIN INIT INFO
+# Provides:          s2-server-ec
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: CoAP server to provide data from OSV EC.
+# Description:       This is a CoAP server which is used to read data from an
+#                    OSV's Engine Controller and provide it.
+### END INIT INFO
+
+# Author: Guillaume Le Gall <guillaume.legall@imt-atlantique.fr>
+
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+DESC="s2-server-ec"
+DAEMON=/usr/local/share/s2-server-ec/s2-server-ec-0.2-jar-with-dependencies.jar
+
+test -e "/usr/local/share/s2-server-ec/s2-server-ec-0.2-jar-with-dependencies.jar" || exit 0
+
+PID_FILE=/var/run/s2-server-ec.pid
+
+start_bms_server() {
+        # Start the daemon/service
+        #
+        # Returns:
+        #   0 if daemon has been started
+        #   1 if daemon was already running
+        #   2 if daemon could not be started
+#        start-stop-daemon --start --quiet --pidfile $PID --exec $DAEMON --test \
+#                > /dev/null || return 1
+#        start-stop-daemon --start --quiet --background --make-pidfile \
+#                --pidfile $PID --exec $DAEMON \
+#                || return 2
+
+	if [ -e $PID_FILE ]; then
+		return 1
+	fi
+
+	java -jar /usr/local/share/s2-server-ec/s2-server-ec-0.2-jar-with-dependencies.jar &
+
+	PID=$!
+	echo "$PID" > $PID_FILE
+	return 0
+}
+
+stop_bms_server() {
+        # Stops the daemon/service
+        #
+        # Return
+        #   0 if daemon has been stopped
+        #   1 if daemon was already stopped
+        #   2 if daemon could not be stopped
+        #   other if a failure occurred
+#       start-stop-daemon --stop --quiet --pidfile $PID --name $NAME
+
+	if [ ! -e $PID_FILE ]; then
+                return 1
+        fi
+
+	kill `cat $PID_FILE`
+	rm $PID_FILE
+        return "$?"
+}
+
+case "$1" in
+        start)
+                log_daemon_msg "Starting $DESC" "$NAME"
+                start_bms_server
+
+                case "$?" in
+                        0|1) log_end_msg 0 ;;
+                        2)   log_end_msg 1 ;;
+                esac
+                ;;
+        stop)
+                log_daemon_msg "Stopping $DESC" "$NAME"
+                stop_bms_server
+                case "$?" in
+                        0|1) log_end_msg 0 ;;
+                        2)   log_end_msg 1 ;;
+                esac
+                ;;
+        restart)
+                log_daemon_msg "Restarting $DESC" "$NAME"
+
+                stop_bms_server
+                case "$?" in
+                        0|1)
+                                start_bms_server
+                                case "$?" in
+                                        0) log_end_msg 0 ;;
+                                        1) log_end_msg 1 ;; # Old process is still running
+                                        *) log_end_msg 1 ;; # Failed to start
+                                esac
+                                ;;
+                        *)
+                                # Failed to stop
+                                log_end_msg 1
+                                ;;
+                esac
+                ;;
+
+        status)
+                status_of_proc -p $PID_FILE "$DAEMON" "$NAME" && exit 0 || exit $?
+                ;;
+        *)
+                echo "Usage: $NAME {start|stop|restart|status}" >&2
+                exit 3
+                ;;
+esac
+

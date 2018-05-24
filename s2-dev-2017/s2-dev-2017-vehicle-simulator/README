@@ -1,0 +1,46 @@
+#################################
+# s2-dev-2017-vehicle-simulator #
+#################################
+
+
+About
+=====
+
+This project is a vehicle data provider simulator, for s2 2017 students.
+
+Licensing
+=========
+
+This work is Copyright 2017 Institut Mines-Télécom.
+
+s2-dev-2017-vehicle-simulator is free software: you can redistribute it and/or
+modify it under the terms of the GNU General Public License as published by the
+Free Software Foundation, either version 3 of the License, or (at your option)
+any later version.
+
+s2-dev-2017-vehicle-simulator is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+details.
+
+You should have received a copy of the GNU General Public License along with
+s2-dev-2017-vehicle-simulator. If not, see <http://www.gnu.org/licenses/>.
+
+How to
+======
+
+To simulate the behavior of the vehicle, select a temporary folder in the
+configuration panel, and click "Démarrer". The simulator will continuously
+update the variables in the different files it will create in the temporary
+folder.
+
+When the simulator is running, you may stop and reset it by pressing "Arrêter".
+You may ask the vehicle to stop. If you do so, the vehicle will smoothly stop
+after a few seconds. When the simulation is running and you asked the vehicle
+to stop, you may request it to charge. You may stop the charging process by
+clicking "Arrêter de charger" or "Faire rouler le véhicule".
+
+Contact
+=======
+
+Guillaume Le Gall <guillaume.legall@imt-atlantique.fr>

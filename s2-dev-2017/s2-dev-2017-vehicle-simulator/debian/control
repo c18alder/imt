@@ -1,0 +1,13 @@
+Source: osv-simulator
+Section: embedded
+Priority: optional
+Maintainer: Guillaume Le Gall <guillaume.legall@imt-atlantique.fr>
+Build-Depends: debhelper (>= 9), devscripts, libjdeb-java
+Standards-Version: 3.9.8
+Homepage: http://its.ipv6.enstb.fr/code
+Vcs-Git: http://its.ipv6.enstb.fr/code/s2-dev-2017.git
+Package: osv-simulator
+Version: [[version]]
+Architecture: all
+Depends: openjdk-8-jdk, s2-server-ec, s2-server-bms
+Description: OSV data simulator.

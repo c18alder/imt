@@ -1,0 +1,13 @@
+Source: s2-server-bms
+Section: embedded
+Priority: optional
+Maintainer: Guillaume Le Gall <guillaume.legall@imt-atlantique.fr>
+Build-Depends: debhelper (>= 9), devscripts, libjdeb-java
+Standards-Version: 3.9.8
+Homepage: http://its.ipv6.enstb.fr/code
+Vcs-Git: http://its.ipv6.enstb.fr/code/s2-dev-2017.git
+Package: s2-server-bms
+Version: [[version]]
+Architecture: all
+Depends: librxtx-java, openjdk-8-jdk
+Description: CoAP server to provide OSV BMS information.

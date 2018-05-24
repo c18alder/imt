@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# source debconf library
+. /usr/share/debconf/confmodule
+
+case "$1" in
+
+  configure)
+    echo "Configuring s2-server-bms."
+    chmod 775 /etc/init.d/s2-server-bms
+    systemctl daemon-reload
+    systemctl enable s2-server-bms
+    echo "Done."
+  ;;
+
+  abort-upgrade|abort-remove|abort-deconfigure)
+    exit 0
+  ;;
+
+  *)
+    echo "postinst called with unknown argument \`$1'" >&2
+    exit 1
+  ;;
+
+esac
+

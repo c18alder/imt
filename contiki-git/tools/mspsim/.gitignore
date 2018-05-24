@@ -1,0 +1,13 @@
+###Java###
+
+*.class
+
+# Package Files #
+./*.jar
+*.war
+*.ear
+build
+mspsim.jar
+
+
+.DS_Store

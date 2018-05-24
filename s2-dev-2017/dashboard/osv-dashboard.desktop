@@ -1,0 +1,6 @@
+[Desktop Entry]
+	Name=OSV Dashboard
+	Exec=java -jar /usr/local/share/osv-dashboard/osv-dashboard-0.1-jar-with-dependencies.jar
+	Icon=/usr/local/share/osv-dashboard/dashboard_ico.png
+	Type=Application
+	Categories=GTK;GNOME;Utility;

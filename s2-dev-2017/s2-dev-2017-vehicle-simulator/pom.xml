@@ -1,0 +1,106 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>osv-simulator</groupId>
+	<artifactId>osv-simulator</artifactId>
+	<version>0.1</version>
+	<description>OSV data simulator for both EC and BMS.</description>
+	<licenses>
+		<license>
+			<name>GPLv3</name>
+			<url>http://gnu.org/licences</url>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<name>Guillaume Le Gall</name>
+			<email>guillaume.legall@imt-atlantique.fr</email>
+			<organization>IMT Atlantique</organization>
+			<url>http://its.ipv6.enstb.fr/code/</url>
+			<organizationUrl>http://imt-atlantique.fr</organizationUrl>
+		</developer>
+	</developers>
+	<organization>
+		<name>IMT Atlantique</name>
+		<url>http://imt-atlantique.fr</url>
+	</organization>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>fr.enstb.osvdatasimulator.main.App</mainClass>
+						</manifest>
+					</archive>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<artifactId>jdeb</artifactId>
+				<groupId>org.vafer</groupId>
+				<version>1.5</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>jdeb</goal>
+						</goals>
+						<configuration>
+							<verbose>true</verbose>
+							<controlDir>${basedir}/debian</controlDir>
+							<dataSet>
+								<data>
+									<src>${project.build.directory}/${project.build.finalName}-jar-with-dependencies.jar</src>
+									<type>file</type>
+									<mapper>
+										<type>perm</type>
+										<prefix>/usr/local/share/osv-simulator</prefix>
+										<group>dialout</group>
+									</mapper>
+								</data>
+
+								<data>
+									<src>${basedir}/usr</src>
+									<type>directory</type>
+									<mapper>
+										<type>perm</type>
+										<prefix>/usr</prefix>
+										<group>dialout</group>
+									</mapper>
+								</data>
+							</dataSet>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
+

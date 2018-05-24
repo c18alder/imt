@@ -1,0 +1,19 @@
+{
+  "contiki_path": "/tmp/fakehome/mnt", 
+  "cooja_jar_path": "/tmp/fakehome/mnt/tools/cooja/dist/cooja.jar", 
+  "destination_path": "/tmp/fakehome/mnt/experiments_temp/UIISWUK2BUJVJ6YI57KUGBZ56MBPCD3R", 
+  "dst_config_file_path": "/tmp/fakehome/mnt/experiments_temp/UIISWUK2BUJVJ6YI57KUGBZ56MBPCD3R/config/scenario.csc", 
+  "dst_config_path": "/tmp/fakehome/mnt/experiments_temp/UIISWUK2BUJVJ6YI57KUGBZ56MBPCD3R/config", 
+  "dst_nodes_path": "/tmp/fakehome/mnt/experiments_temp/UIISWUK2BUJVJ6YI57KUGBZ56MBPCD3R/nodes", 
+  "dst_script_file_path": "/tmp/fakehome/mnt/experiments_temp/UIISWUK2BUJVJ6YI57KUGBZ56MBPCD3R/config/script.js", 
+  "experiment_config_file_path": "/tmp/fakehome/mnt/experiments_temp/UIISWUK2BUJVJ6YI57KUGBZ56MBPCD3R/config/config.json", 
+  "experiment_paths_file_path": "/tmp/fakehome/mnt/experiments_temp/UIISWUK2BUJVJ6YI57KUGBZ56MBPCD3R/config/paths.json", 
+  "experiments_path": "/tmp/fakehome/mnt/experiments_temp", 
+  "results_path": "/tmp/fakehome/mnt/experiments_temp/UIISWUK2BUJVJ6YI57KUGBZ56MBPCD3R/results", 
+  "sources_path": "/tmp/fakehome/mnt/simulation/src", 
+  "src_config_file_path": "/tmp/fakehome/mnt/simulation/src/configs/2ladder_8motes/scenario.csc", 
+  "src_config_path": "/tmp/fakehome/mnt/simulation/src/configs/2ladder_8motes", 
+  "src_nodes_path": "/tmp/fakehome/mnt/simulation/src/nodes", 
+  "src_script_file_path": "/tmp/fakehome/mnt/simulation/src/configs/2ladder_8motes/script.js", 
+  "tools_path": "/tmp/fakehome/mnt/simulation/tools"
+}

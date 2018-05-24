@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -e
+
+case "$1" in
+  remove|upgrade|deconfigure|purge)
+    systemctl daemon-reload
+  ;;
+
+  failed-upgrade)
+  ;;
+
+  *)
+    echo "postrm called with unknown argument \`$1'" >&2
+    exit 1
+  ;;
+esac
+
+exit 0
+

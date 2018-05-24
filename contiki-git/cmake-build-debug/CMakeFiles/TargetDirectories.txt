@@ -1,0 +1,3 @@
+/home/aris/Coding/contiki-git/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/aris/Coding/contiki-git/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/aris/Coding/contiki-git/cmake-build-debug/CMakeFiles/contiki_git.dir

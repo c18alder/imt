@@ -1,0 +1,86 @@
+Projet développement S2 2017 - Groupe 34
+========================================
+
+The project represents a data network in an Open Source Electrical vehicle, 
+composed of two servers and one client.
+ 
+********
+License
+********
+
+This work is Copyright 2017 Institut Mines-Télécom.
+
+These programs are free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later
+version.
+
+These programs are distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with
+these programs. If not, see <http://www.gnu.org/licenses/>.
+
+Dependancies
+------------
+
+$ sudo apt-get install openjdk-8-jdk maven librxtx-java
+
+*********************
+LAUNCHING THE NETWORK
+*********************
+The client is implemented in the java project "dashboard". To launch it, compile
+and execute the Java code in the dashboard/ folder. The main class is located in:
+	*dashboard/src/fr/enstb/osv/dashboard/App.java
+It is an application with a graphic interface representing the dashboard of the 
+vehicle and showing the values of the resources transmitted over the network (
+speed, distance, state of charge, cells voltages, cells temperatures). The 
+OSVCoAPClient java class implemented on this application automatically gets 
+these values from the servers via the CoAP protocol whenever they change.
+
+The servers are implemented in the Java projects "s2-server-bms" and "s2-server-
+ec". To launch them, compile and execute the Java code in those folders. The main classes are located in : 
+	*  s2-server-bms/src/fr/enstb/ipv6/its/dev2017/server/bms/core/BMSServer.java
+	*  s2-server-ec/src/fr/enstb/ipv6/its/dev2017/server/ec/core/ECServer.java
+These two applications, with no graphic interface, provide the client with all 
+the resources it needs to display on the dashboard. They extract data from two 
+important components of the vehicle, being the "Engine Controller" (EC) and the
+"Battery Managing System" (BMS). 
+
+In the case where this project is not yet implemented on the real vehicle, there
+is simulator in the depository capable of providing this data and the servers 
+will then be reading from it. It is a Java application in the project "s2-dev-
+2017-vehicle-simulator". The main class is located in  : 
+	*s2-dev-2017-vehicle-simulator/src/main/java/fr/enstb/osvdatasimulator/main/App
+.java
+It is an application with a simple graphic interface and can simulate many 
+scenarios: (start/stop the vehicle, accelerating/decelerating, charging/stop 
+charging).
+
+After launching these four applications (dashboard, two servers and the 
+simulator) you can follow the evolution of the resources values in the simulator
+and compare them to the values showed by the dashboard and try the available 
+scenarios. 
+
+*********************
+NETWORK CONFIGURATION
+*********************
+Servers
+-------
+The servers' ports can be configured. The CoAP ports set by the group are : 
+-5683 for the EC server (the default CoAP port) 
+-1234 for the BMS server 
+These values can be modified in the following configurations files : 
+*s2-server_bms/BMSConfig.properties
+*s2-server-ec/ECConfig.properties
+In these files you can also specify whether the data handled by the servers will
+be simulated or not. 
+
+Client
+-------
+The client also keeps the addresses and port numbers of the two servers in the 
+following configuration file :
+*dashboard/DashboardConfig.properties
+The default address of both servers is ::1 
+

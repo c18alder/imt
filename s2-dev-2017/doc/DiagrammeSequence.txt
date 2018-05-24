@@ -1,0 +1,17 @@
+title Découverte de service
+
+note right of OSVServicesDiscoverer: Request the service
+
+OSVServicesDiscoverer->+OSVServicesProvider : BMS service request
+OSVServicesDiscoverer->OSVServicesProvider :
+OSVServicesDiscoverer->OSVServicesProvider :
+
+
+OSVServicesProvider-->OSVServicesDiscoverer: BMS Response
+OSVServicesProvider-->OSVServicesDiscoverer:
+OSVServicesProvider-->-OSVServicesDiscoverer:
+
+note right of OSVServicesDiscoverer: Use the service
+
+OSVServicesDiscoverer->+BMSServer : GET battery_voltage
+BMSServer-->-OSVServicesDiscoverer : battery_voltage

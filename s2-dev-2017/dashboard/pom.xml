@@ -1,0 +1,157 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>osv-dashboard</groupId>
+	<artifactId>osv-dashboard</artifactId>
+	<version>0.1</version>
+	<description>CoAP client and graphic interface to display data from an OSV.</description>
+	<licenses>
+		<license>
+			<name>GPLv3</name>
+			<url>http://gnu.org/licences</url>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<name>Guillaume Le Gall</name>
+			<email>guillaume.legall@imt-atlantique.fr</email>
+			<organization>IMT Atlantique</organization>
+			<url>http://its.ipv6.enstb.fr/code/</url>
+			<organizationUrl>http://imt-atlantique.fr</organizationUrl>
+		</developer>
+	</developers>
+	<organization>
+		<name>IMT Atlantique</name>
+		<url>http://imt-atlantique.fr</url>
+	</organization>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+		<resources>
+			<resource>
+				<directory>img</directory>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>fr.enstb.osv.dashboard.App</mainClass>
+						</manifest>
+					</archive>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+
+			<plugin>
+				<artifactId>jdeb</artifactId>
+				<groupId>org.vafer</groupId>
+				<version>1.5</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>jdeb</goal>
+						</goals>
+						<configuration>
+							<verbose>true</verbose>
+							<controlDir>${basedir}/debian</controlDir>
+							<dataSet>
+								<data>
+									<src>${project.build.directory}/${project.build.finalName}-jar-with-dependencies.jar</src>
+									<type>file</type>
+									<mapper>
+										<type>perm</type>
+										<prefix>/usr/local/share/osv-dashboard</prefix>
+										<group>dialout</group>
+									</mapper>
+								</data>
+
+								<data>
+									<src>dashboard_ico.png</src>
+									<type>file</type>
+									<mapper>
+										<type>perm</type>
+										<prefix>/usr/local/share/osv-dashboard</prefix>
+										<group>dialout</group>
+									</mapper>
+								</data>
+
+								<data>
+									<src>osv-dashboard.desktop</src>
+									<type>file</type>
+									<mapper>
+										<type>perm</type>
+										<prefix>/usr/share/applications</prefix>
+										<group>dialout</group>
+									</mapper>
+								</data>
+
+
+								<data>
+									<src>${basedir}/etc</src>
+									<type>directory</type>
+									<mapper>
+										<type>perm</type>
+										<prefix>/etc</prefix>
+										<group>dialout</group>
+									</mapper>
+								</data>
+							</dataSet>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.eclipse.californium/californium-core -->
+		<dependency>
+			<groupId>org.eclipse.californium</groupId>
+			<artifactId>californium-core</artifactId>
+			<version>2.0.0-M2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.eclipse.californium/element-connector -->
+		<dependency>
+			<groupId>org.eclipse.californium</groupId>
+			<artifactId>element-connector</artifactId>
+			<version>2.0.0-M2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+	</dependencies>
+
+</project>
+

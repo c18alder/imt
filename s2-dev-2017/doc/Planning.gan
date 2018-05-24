@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="Test" company="" webLink="None" view-date="2017-01-29" view-index="0" gantt-divider-location="788" resource-divider-location="300" version="2.8.2" locale="en_US">
+    <description/>
+    <view zooming-state="default:7" id="gantt-chart">
+        <field id="tpd3" name="Name" width="302" order="0"/>
+        <field id="tpd4" name="Begin date" width="73" order="1"/>
+        <field id="tpd5" name="End date" width="68" order="2"/>
+        <field id="tpd13" name="Resources" width="127" order="3"/>
+        <field id="tpd1" name="Priority" width="62" order="4"/>
+        <field id="tpd7" name="Completion" width="86" order="5"/>
+        <field id="tpd6" name="Duration" width="66" order="6"/>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Name" width="210" order="0"/>
+        <field id="1" name="Default role" width="86" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="1" tue="1" wed="0" thu="0" fri="1" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+        <date year="2008" month="1" date="1" type="HOLIDAY"><![CDATA[New Years Day]]></date>
+        <date year="2008" month="5" date="1" type="HOLIDAY"><![CDATA[Labour Day]]></date>
+        <date year="2008" month="5" date="8" type="HOLIDAY"><![CDATA[V-E Day]]></date>
+        <date year="2008" month="5" date="12" type="HOLIDAY"><![CDATA[Whitmonday]]></date>
+        <date year="2008" month="7" date="14" type="HOLIDAY"><![CDATA[Bastille Day]]></date>
+        <date year="2008" month="8" date="15" type="HOLIDAY"><![CDATA[Assumption Day]]></date>
+        <date year="2008" month="11" date="1" type="HOLIDAY"><![CDATA[All Saints Day]]></date>
+        <date year="2008" month="11" date="11" type="HOLIDAY"><![CDATA[Armistice Day]]></date>
+        <date year="2008" month="12" date="25" type="HOLIDAY"><![CDATA[Christmas Day]]></date>
+        <date year="2009" month="1" date="1" type="HOLIDAY"><![CDATA[New Years Day]]></date>
+        <date year="2009" month="5" date="1" type="HOLIDAY"><![CDATA[Labour Day]]></date>
+        <date year="2009" month="5" date="8" type="HOLIDAY"><![CDATA[V-E Day]]></date>
+        <date year="2009" month="5" date="21" type="HOLIDAY"><![CDATA[Ascension Day]]></date>
+        <date year="2009" month="6" date="1" type="HOLIDAY"><![CDATA[Whitmonday]]></date>
+        <date year="2009" month="7" date="13" type="NEUTRAL"><![CDATA[Bastille Day]]></date>
+        <date year="2009" month="7" date="14" type="HOLIDAY"><![CDATA[Bastille Day]]></date>
+        <date year="2009" month="8" date="15" type="HOLIDAY"><![CDATA[Assumption Day]]></date>
+        <date year="2009" month="11" date="1" type="HOLIDAY"><![CDATA[All Saints Day]]></date>
+        <date year="2009" month="11" date="11" type="HOLIDAY"><![CDATA[Armistice Day]]></date>
+        <date year="2009" month="12" date="25" type="HOLIDAY"><![CDATA[Christmas Day]]></date>
+        <date year="2010" month="1" date="1" type="HOLIDAY"><![CDATA[New Years Day]]></date>
+        <date year="2010" month="4" date="5" type="HOLIDAY"><![CDATA[Easter Monday]]></date>
+        <date year="2010" month="5" date="1" type="HOLIDAY"><![CDATA[Labour Day]]></date>
+        <date year="2010" month="5" date="8" type="HOLIDAY"><![CDATA[V-E Day]]></date>
+        <date year="2010" month="5" date="13" type="HOLIDAY"><![CDATA[Ascension Day]]></date>
+        <date year="2010" month="5" date="24" type="HOLIDAY"><![CDATA[Whitmonday]]></date>
+        <date year="2010" month="7" date="14" type="HOLIDAY"><![CDATA[Bastille Day]]></date>
+        <date year="2010" month="8" date="15" type="HOLIDAY"><![CDATA[Assumption Day]]></date>
+        <date year="2010" month="11" date="1" type="HOLIDAY"><![CDATA[All Saints Day]]></date>
+        <date year="2010" month="11" date="11" type="HOLIDAY"><![CDATA[Armistice Day]]></date>
+        <date year="2010" month="12" date="25" type="HOLIDAY"><![CDATA[Christmas Day]]></date>
+        <date year="2011" month="1" date="1" type="HOLIDAY"><![CDATA[New Years Day]]></date>
+        <date year="2011" month="4" date="25" type="HOLIDAY"><![CDATA[Easter Monday]]></date>
+        <date year="2011" month="5" date="1" type="HOLIDAY"><![CDATA[Labour Day]]></date>
+        <date year="2011" month="5" date="8" type="HOLIDAY"><![CDATA[V-E Day]]></date>
+        <date year="2011" month="5" date="29" type="NEUTRAL"><![CDATA[Mothers Day]]></date>
+        <date year="2011" month="6" date="2" type="HOLIDAY"><![CDATA[Ascension Day]]></date>
+        <date year="2011" month="6" date="13" type="HOLIDAY"><![CDATA[Whitmonday]]></date>
+        <date year="2011" month="6" date="19" type="NEUTRAL"><![CDATA[Fathers Day]]></date>
+        <date year="2011" month="7" date="14" type="HOLIDAY"><![CDATA[Bastille Day]]></date>
+        <date year="2011" month="8" date="15" type="HOLIDAY"><![CDATA[Assumption Day]]></date>
+        <date year="2011" month="11" date="1" type="HOLIDAY"><![CDATA[All Saints Day]]></date>
+        <date year="2011" month="11" date="11" type="HOLIDAY"><![CDATA[Armistice Day]]></date>
+        <date year="2011" month="12" date="25" type="HOLIDAY"><![CDATA[Christmas Day]]></date>
+        <date year="2012" month="1" date="1" type="HOLIDAY"><![CDATA[New Years Day]]></date>
+        <date year="2012" month="1" date="2" type="HOLIDAY"><![CDATA[New Years Day (in lieu)]]></date>
+        <date year="2012" month="4" date="9" type="HOLIDAY"><![CDATA[Easter Monday]]></date>
+        <date year="2012" month="5" date="1" type="HOLIDAY"><![CDATA[Labour Day]]></date>
+        <date year="2012" month="5" date="8" type="HOLIDAY"><![CDATA[V-E Day]]></date>
+        <date year="2012" month="5" date="17" type="HOLIDAY"><![CDATA[Ascension Day]]></date>
+        <date year="2012" month="5" date="28" type="HOLIDAY"><![CDATA[Whitmonday]]></date>
+        <date year="2012" month="6" date="3" type="NEUTRAL"><![CDATA[Mothers Day]]></date>
+        <date year="2012" month="6" date="17" type="NEUTRAL"><![CDATA[Fathers Day]]></date>
+        <date year="2012" month="7" date="14" type="HOLIDAY"><![CDATA[Bastille Day]]></date>
+        <date year="2012" month="8" date="15" type="HOLIDAY"><![CDATA[Assumption Day]]></date>
+        <date year="2012" month="11" date="1" type="HOLIDAY"><![CDATA[All Saints Day]]></date>
+        <date year="2012" month="11" date="11" type="HOLIDAY"><![CDATA[Armistice Day]]></date>
+        <date year="2012" month="11" date="12" type="HOLIDAY"><![CDATA[Armistice Day (in Lieu)]]></date>
+        <date year="2012" month="12" date="25" type="HOLIDAY"><![CDATA[Christmas Day]]></date>
+        <date year="2013" month="1" date="1" type="HOLIDAY"><![CDATA[New Years Day]]></date>
+        <date year="2013" month="4" date="1" type="HOLIDAY"><![CDATA[Easter Monday]]></date>
+        <date year="2013" month="5" date="1" type="HOLIDAY"><![CDATA[Labour Day]]></date>
+        <date year="2013" month="5" date="8" type="HOLIDAY"><![CDATA[V-E Day]]></date>
+        <date year="2013" month="5" date="9" type="HOLIDAY"><![CDATA[Ascension Day]]></date>
+        <date year="2013" month="5" date="20" type="HOLIDAY"><![CDATA[Whitmonday]]></date>
+        <date year="2013" month="5" date="26" type="NEUTRAL"><![CDATA[Mothers Day]]></date>
+        <date year="2013" month="6" date="16" type="NEUTRAL"><![CDATA[Fathers Day]]></date>
+        <date year="2013" month="7" date="14" type="HOLIDAY"><![CDATA[Bastille Day]]></date>
+        <date year="2013" month="8" date="15" type="HOLIDAY"><![CDATA[Assumption Day]]></date>
+        <date year="2013" month="11" date="1" type="HOLIDAY"><![CDATA[All Saints Day]]></date>
+        <date year="2013" month="11" date="11" type="HOLIDAY"><![CDATA[Armistice Day]]></date>
+        <date year="2013" month="12" date="25" type="HOLIDAY"><![CDATA[Christmas Day]]></date>
+        <date year="2014" month="1" date="1" type="HOLIDAY"><![CDATA[New Years Day]]></date>
+        <date year="2014" month="4" date="21" type="HOLIDAY"><![CDATA[Easter Monday]]></date>
+        <date year="2014" month="11" date="1" type="HOLIDAY"><![CDATA[Labour Day
+        V-E Day
+        Mothers Day
+        Ascension Day
+        Whitmonday
+        Fathers Day
+        Bastille Day
+        Assumption Day
+        All Saints Day]]></date>
+        <date year="2014" month="11" date="11" type="HOLIDAY"><![CDATA[Armistice Day]]></date>
+        <date year="2014" month="12" date="25" type="HOLIDAY"><![CDATA[Christmas Day]]></date>
+        <date year="2015" month="1" date="1" type="HOLIDAY"><![CDATA[New Years Day]]></date>
+        <date year="2015" month="4" date="6" type="HOLIDAY"><![CDATA[Easter Monday]]></date>
+        <date year="2015" month="5" date="1" type="HOLIDAY"><![CDATA[Labour Day]]></date>
+        <date year="2015" month="5" date="8" type="HOLIDAY"><![CDATA[V-E Day]]></date>
+        <date year="2015" month="5" date="14" type="HOLIDAY"><![CDATA[Ascension Day]]></date>
+        <date year="2015" month="5" date="24" type="NEUTRAL"><![CDATA[Mothers Day]]></date>
+        <date year="2015" month="5" date="25" type="HOLIDAY"><![CDATA[Whitmonday]]></date>
+        <date year="2015" month="6" date="21" type="NEUTRAL"><![CDATA[Fathers Day]]></date>
+        <date year="2015" month="7" date="14" type="HOLIDAY"><![CDATA[Bastille Day]]></date>
+        <date year="2015" month="8" date="15" type="HOLIDAY"><![CDATA[Assumption Day]]></date>
+        <date year="2015" month="11" date="1" type="HOLIDAY"><![CDATA[All Saints Day]]></date>
+        <date year="2015" month="11" date="11" type="HOLIDAY"><![CDATA[Armistice Day]]></date>
+        <date year="2015" month="12" date="25" type="HOLIDAY"><![CDATA[Christmas Day]]></date>
+        <date year="2016" month="1" date="1" type="HOLIDAY"><![CDATA[New Years Day]]></date>
+        <date year="2016" month="3" date="28" type="HOLIDAY"><![CDATA[Easter Monday]]></date>
+        <date year="2016" month="5" date="1" type="HOLIDAY"><![CDATA[Labour Day]]></date>
+        <date year="2016" month="5" date="5" type="HOLIDAY"><![CDATA[Ascension Day]]></date>
+        <date year="2016" month="5" date="8" type="HOLIDAY"><![CDATA[V-E Day]]></date>
+        <date year="2016" month="5" date="16" type="HOLIDAY"><![CDATA[Whitmonday]]></date>
+        <date year="2016" month="5" date="29" type="NEUTRAL"><![CDATA[Mothers Day]]></date>
+        <date year="2016" month="6" date="19" type="NEUTRAL"><![CDATA[Fathers Day]]></date>
+        <date year="2016" month="7" date="14" type="HOLIDAY"><![CDATA[Bastille Day]]></date>
+        <date year="2016" month="8" date="15" type="HOLIDAY"><![CDATA[Assumption Day]]></date>
+        <date year="2016" month="11" date="1" type="HOLIDAY"><![CDATA[All Saints Day]]></date>
+        <date year="2016" month="11" date="11" type="HOLIDAY"><![CDATA[Armistice Day]]></date>
+        <date year="2016" month="12" date="25" type="HOLIDAY"><![CDATA[Christmas Day]]></date>
+        <date year="2016" month="12" date="26" type="HOLIDAY"><![CDATA[Christmas Day (observed)]]></date>
+        <date year="2017" month="1" date="1" type="HOLIDAY"><![CDATA[New Year's Day]]></date>
+        <date year="2017" month="4" date="17" type="HOLIDAY"><![CDATA[Easter Monday]]></date>
+        <date year="2017" month="5" date="1" type="HOLIDAY"><![CDATA[Labour Day]]></date>
+        <date year="2017" month="5" date="8" type="HOLIDAY"><![CDATA[V-E Day]]></date>
+        <date year="2017" month="5" date="25" type="HOLIDAY"><![CDATA[Ascension Day]]></date>
+        <date year="2017" month="5" date="28" type="NEUTRAL"><![CDATA[Mother's Day]]></date>
+        <date year="2017" month="6" date="5" type="HOLIDAY"><![CDATA[Whitmonday]]></date>
+        <date year="2017" month="6" date="18" type="NEUTRAL"><![CDATA[Father's Day]]></date>
+        <date year="2017" month="7" date="14" type="HOLIDAY"><![CDATA[Bastille Day]]></date>
+        <date year="2017" month="8" date="15" type="HOLIDAY"><![CDATA[Assumption Day]]></date>
+        <date year="2017" month="11" date="1" type="HOLIDAY"><![CDATA[All Saints Day]]></date>
+        <date year="2017" month="11" date="11" type="HOLIDAY"><![CDATA[Armistice Day]]></date>
+        <date year="2017" month="12" date="25" type="HOLIDAY"><![CDATA[Christmas Day]]></date>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="13" name="Cahier Des Charges" color="#8cb6ce" meeting="false" start="2017-02-01" duration="6" complete="100" priority="0" expand="true">
+            <depend id="0" type="2" difference="0" hardness="Strong"/>
+            <depend id="1" type="2" difference="0" hardness="Strong"/>
+            <depend id="3" type="2" difference="0" hardness="Strong"/>
+            <depend id="39" type="2" difference="0" hardness="Strong"/>
+            <depend id="53" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="0" name="Client CoAP" color="#000000" meeting="false" start="2017-02-22" duration="18" complete="93" expand="true">
+            <depend id="11" type="2" difference="0" hardness="Strong"/>
+            <depend id="93" type="2" difference="0" hardness="Strong"/>
+            <depend id="100" type="2" difference="0" hardness="Strong"/>
+            <task id="39" name="Requête client GET" color="#8cb6ce" meeting="false" start="2017-02-22" duration="5" complete="100" expand="true">
+                <depend id="10" type="2" difference="0" hardness="Strong"/>
+                <depend id="12" type="2" difference="0" hardness="Strong"/>
+                <depend id="15" type="2" difference="0" hardness="Strong"/>
+                <depend id="36" type="2" difference="0" hardness="Strong"/>
+                <depend id="41" type="2" difference="0" hardness="Strong"/>
+                <depend id="108" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="41" name="Requête client POST" color="#8cb6ce" meeting="false" start="2017-03-09" duration="3" complete="100" priority="0" expand="true">
+                <depend id="9" type="2" difference="0" hardness="Strong"/>
+                <depend id="15" type="2" difference="0" hardness="Strong"/>
+                <depend id="108" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="9" name="Découverte des ressources serveur" color="#8cb6ce" meeting="false" start="2017-03-22" duration="5" complete="100" priority="3" expand="true">
+                <depend id="10" type="2" difference="0" hardness="Strong"/>
+                <depend id="108" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="10" name="Découverte des équipements" color="#8cb6ce" meeting="false" start="2017-04-06" duration="5" complete="75" priority="3" expand="true">
+                <depend id="108" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="108" name="Application client" color="#8cb6ce" meeting="true" start="2017-04-26" duration="0" complete="100" expand="true"/>
+        </task>
+        <task id="1" name="Serveur CoAP" color="#000000" meeting="false" start="2017-02-22" duration="8" complete="100" expand="true">
+            <depend id="11" type="2" difference="0" hardness="Strong"/>
+            <depend id="93" type="2" difference="0" hardness="Strong"/>
+            <depend id="100" type="2" difference="0" hardness="Strong"/>
+            <task id="53" name="Organiser les ressources serveur" color="#8cb6ce" meeting="false" start="2017-02-22" duration="2" complete="100" expand="true"/>
+            <task id="3" name="Requête serveur GET" color="#8cb6ce" meeting="false" start="2017-02-22" duration="5" complete="100" expand="true">
+                <depend id="12" type="2" difference="0" hardness="Strong"/>
+                <depend id="15" type="2" difference="0" hardness="Strong"/>
+                <depend id="36" type="2" difference="0" hardness="Strong"/>
+                <depend id="102" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="36" name="Requête serveur POST" color="#8cb6ce" meeting="false" start="2017-03-09" duration="3" complete="100" priority="0" expand="true">
+                <depend id="9" type="2" difference="0" hardness="Strong"/>
+                <depend id="15" type="2" difference="0" hardness="Strong"/>
+                <depend id="102" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="102" name="Application serveur" color="#8cb6ce" meeting="true" start="2017-03-22" duration="0" complete="100" expand="true"/>
+        </task>
+        <task id="12" name="Documentation Javadoc" color="#8cb6ce" meeting="false" start="2017-03-09" duration="5" complete="0" expand="true"/>
+        <task id="11" name="Environnement de test" color="#8cb6ce" meeting="false" start="2017-04-26" duration="7" complete="0" priority="3" expand="true">
+            <depend id="93" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="100" name="Intégration avec les applis existantes" color="#8cb6ce" meeting="false" start="2017-04-26" duration="5" complete="100" expand="true">
+            <depend id="93" type="2" difference="0" hardness="Strong"/>
+            <depend id="101" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="101" name="Intégration dans le véhicule" color="#8cb6ce" meeting="false" start="2017-05-11" duration="3" complete="0" expand="true">
+            <depend id="93" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="15" name="Rapport V1" color="#8cb6ce" meeting="false" start="2017-03-22" duration="5" complete="100" expand="true">
+            <depend id="93" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="93" name="Rapport V2" color="#8cb6ce" meeting="false" start="2017-05-24" duration="3" complete="100" expand="true">
+            <depend id="14" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="14" name="Poster" color="#8cb6ce" meeting="false" start="2017-06-07" duration="2" complete="0" expand="true"/>
+    </tasks>
+    <resources>
+        <resource id="0" name="Alan" function="Default:0" contacts="" phone=""/>
+        <resource id="1" name="Anis" function="Default:0" contacts="" phone=""/>
+        <resource id="2" name="Abdessalem" function="Default:0" contacts="" phone=""/>
+    </resources>
+    <allocations>
+        <allocation task-id="11" resource-id="0" function="Default:1" responsible="true" load="50.0"/>
+        <allocation task-id="10" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="53" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="14" resource-id="0" function="Default:0" responsible="true" load="50.0"/>
+        <allocation task-id="15" resource-id="0" function="Default:0" responsible="false" load="50.0"/>
+        <allocation task-id="41" resource-id="0" function="Default:0" responsible="false" load="50.0"/>
+        <allocation task-id="13" resource-id="0" function="Default:1" responsible="true" load="50.0"/>
+        <allocation task-id="39" resource-id="0" function="Default:0" responsible="false" load="50.0"/>
+        <allocation task-id="36" resource-id="0" function="Default:0" responsible="false" load="50.0"/>
+        <allocation task-id="3" resource-id="0" function="Default:0" responsible="false" load="50.0"/>
+        <allocation task-id="93" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="9" resource-id="0" function="Default:0" responsible="false" load="50.0"/>
+        <allocation task-id="101" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="14" resource-id="1" function="Default:0" responsible="false" load="25.0"/>
+        <allocation task-id="15" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="11" resource-id="1" function="Default:0" responsible="false" load="50.0"/>
+        <allocation task-id="41" resource-id="1" function="Default:0" responsible="true" load="50.0"/>
+        <allocation task-id="1" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="13" resource-id="1" function="Default:0" responsible="false" load="25.0"/>
+        <allocation task-id="36" resource-id="1" function="Default:0" responsible="true" load="50.0"/>
+        <allocation task-id="3" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="93" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="100" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="101" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="12" resource-id="2" function="Default:1" responsible="true" load="50.0"/>
+        <allocation task-id="14" resource-id="2" function="Default:0" responsible="false" load="25.0"/>
+        <allocation task-id="15" resource-id="2" function="Default:0" responsible="false" load="50.0"/>
+        <allocation task-id="39" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="13" resource-id="2" function="Default:0" responsible="false" load="25.0"/>
+        <allocation task-id="93" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="9" resource-id="2" function="Default:0" responsible="true" load="50.0"/>
+        <allocation task-id="0" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="100" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
+    </allocations>
+    <vacations/>
+    <previous>
+        <previous-tasks name="Test">
+            <previous-task id="13" start="2017-02-27" duration="1" meeting="false" super="false"/>
+            <previous-task id="0" start="2017-03-02" duration="8" meeting="false" super="true"/>
+            <previous-task id="39" start="2017-03-02" duration="3" meeting="false" super="false"/>
+            <previous-task id="41" start="2017-03-15" duration="5" meeting="false" super="false"/>
+            <previous-task id="9" start="2017-03-15" duration="5" meeting="false" super="false"/>
+            <previous-task id="10" start="2017-03-15" duration="5" meeting="false" super="false"/>
+            <previous-task id="1" start="2017-03-02" duration="11" meeting="false" super="true"/>
+            <previous-task id="53" start="2017-03-02" duration="1" meeting="false" super="false"/>
+            <previous-task id="36" start="2017-03-22" duration="6" meeting="false" super="false"/>
+            <previous-task id="3" start="2017-03-02" duration="5" meeting="false" super="false"/>
+            <previous-task id="12" start="2017-03-22" duration="5" meeting="false" super="false"/>
+            <previous-task id="11" start="2017-03-22" duration="5" meeting="false" super="false"/>
+            <previous-task id="15" start="2017-04-12" duration="3" meeting="false" super="false"/>
+            <previous-task id="14" start="2017-04-20" duration="1" meeting="false" super="false"/>
+        </previous-tasks>
+    </previous>
+    <roles roleset-name="Default"/>
+</project>

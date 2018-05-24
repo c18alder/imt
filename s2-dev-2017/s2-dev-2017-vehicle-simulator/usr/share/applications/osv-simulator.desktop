@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=OSV Simulator
+Exec=java -jar /usr/local/share/osv-simulator/osv-simulator-0.1-jar-with-dependencies.jar
+Icon=/usr/share/icons/osv/osv-simulator.png
+Type=Application
+Categories=Embedded;
