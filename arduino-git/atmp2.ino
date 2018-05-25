@@ -10,6 +10,11 @@
 #include <SPI.h>
 
 
+#define SEND_START_COMMAND 1
+#define SEND_STOP_COMMAND 2
+#define STATUS_READING 1  // reading from BMS
+#define STATUS_WAITING 2  //waiting for CMD start 
+
 //VARIABLES AND FUNCTIONS FOR PARSING DATA 
 //DESCRIPTORS
 #define Tsensor_char1 7
@@ -44,7 +49,7 @@ static int PWM_battery_charger=0;
 static int counter=0;
 static int error_data=0;
 static int atoi_buf[5];
-
+static short int reading_status=STATUS_WAITING;
 
 void parse_store_data(int *buffer){              //function to parse the data and stores it in the corresponding static variable.
   
@@ -199,22 +204,30 @@ ACM           Acm(&Usb, &AsyncOper);
 /////////////////////////////////////////////////////////////////////////////
 
 /////////////FUNCTION THAT SEND START AND STOP COMMANDS IF USER ENTERS instruction to. //////////////
-int send_start_stop_cmd(){
-  
-      uint8_t cmd_reference = Serial.read();
+uint8_t send_start_stop_cmd(short int start_or_stop){
+      uint8_t rcode=0;
       uint8_t start_cmd[2] = {'0', '1'}; //Start CMD
       uint8_t stop_cmd[2] = {'0', '0'}; //Stop CMD
-
-      if (cmd_reference == 'e') { //ASCII   E
-        Serial.print("\n\n Sending start command: "); Serial.print((char)start_cmd[0]); Serial.println((char)start_cmd[1]);
-        return Acm.SndData(2, start_cmd);     //send start cmd to BMS.
-      } else if (cmd_reference == 's') {
-        Serial.print("\n\nSending stop command:  "); Serial.print((char)stop_cmd[0]); Serial.println((char)stop_cmd[1]);
-        return Acm.SndData(2, stop_cmd);      //send stop cmd to BMS.
-      } else {                                 //invalid code by user.
-        Serial.print("\nYou entered:   "); Serial.print((char)cmd_reference); Serial.print(" \n\n Enter 'e' to send START cmd or 's' to send STOP cmd. \n\n");
-        return 0;  
-      }
+      
+              if(start_or_stop==SEND_START_COMMAND && reading_status==STATUS_WAITING){
+                
+                  Serial.print("\n\n Sending start command: "); Serial.print((char)start_cmd[0]); Serial.println((char)start_cmd[1]);
+                  rcode = Acm.SndData(2, start_cmd); 
+                  if (!rcode){
+                     reading_status=STATUS_READING;
+                  }   
+                  return  rcode;    //send start cmd to BMS.
+                  
+              }else if(start_or_stop==SEND_STOP_COMMAND && reading_status==STATUS_READING){
+                
+                  Serial.print("\n\nSending stop command:  "); Serial.print((char)stop_cmd[0]); Serial.println((char)stop_cmd[1]);
+                  rcode = Acm.SndData(2, stop_cmd);      //send stop cmd to BMS.
+                  if (!rcode){
+                     reading_status=STATUS_WAITING;
+                  }
+                   return  rcode; 
+              }
+       return  rcode; 
 }
 /////////////////////////////////////////////////////
 
@@ -222,7 +235,7 @@ int send_start_stop_cmd(){
 //static buf_aux is used.( This is the static buffer used to store the incoming bytes until the 5 of the line is reached 
 //because Arduino is not really trustworthy that it will read 5 bytes at a time.. Sometimes it reads 2 and in the next loop 3 and the information would be lost after each loop if not static. 
 //THIS IS NECESSARY ( or at least a good precaution) BECAUSE THE BUFFER READ IS REALLY CRAPY (IT Doesn't always read 5 at a time) . This ensures the 5 bytes after the \n. 
-void store_until_5bytes(char *buf,int received){
+void wait_full_line_and_store(char *buf,int received){
   
       for (uint16_t i = 0; i < received; i++ ) { 
 
@@ -303,12 +316,21 @@ void loop()
     
          
        if (Serial.available()) {  //IF USER ENTERED CODE.. 
-            
-           rcode = send_start_stop_cmd();
+           uint8_t cmd_reference = Serial.read();
+           short int type_of_cmd=0;
+            if (cmd_reference == 'e') {
+              type_of_cmd=SEND_START_COMMAND; 
+            } else if (cmd_reference == 's') {
+              type_of_cmd=SEND_STOP_COMMAND;
+            } else {                                 //invalid code by user.
+              Serial.print("\nYou entered:   "); Serial.print((char)cmd_reference); Serial.print(" \n\n Enter 'e' to send START cmd or 's' to send STOP cmd. \n\n"); 
+            }
+
+           rcode = send_start_stop_cmd(type_of_cmd);
            if (rcode){
                  Serial.print("There was an error sending the data to the BMS. \n");
            }
-       }
+       }     // End of IF user enters commands.
          
        delay(50);
 
@@ -316,11 +338,8 @@ void loop()
        uint16_t rcvd = 64;
        rcode = Acm.RcvData(&rcvd, buf);   //reads received data.          TODO: Implement it with a timer instead of looping with delays. 
 
-       //if (rcode && rcode != hrNAK)
-       //    ErrorMessage<uint8_t>(PSTR("Ret"), rcode);
-
        if ( rcvd ) { //more than zero bytes received             
-           store_until_5bytes(buf,rcvd);    //make sure 5 bytes line is complete.   
+           wait_full_line_and_store(buf,rcvd);    //makes sure 5 bytes line is complete (necessary with arduino's buffer and serial prints probable problems ) and stores the parsed data in memory.  
        } //END OF IF (rcvd)
        delay(10);
 
